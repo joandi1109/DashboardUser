@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+
+// import * as React from 'react';
+import { Route, Routes } from 'react-router-dom'
+import { DashboardPengguna } from './Page/DashboardPengguna';
+import { BuatPengguna } from './Page/BuatPengguna';
+import { LihatPengguna } from './Page/LihatPengguna';
+import { BuatPost } from './Page/BuatPost'
+
+// import { withStyles } from "@material-ui/core/styles";
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <Routes>
+    <Route path="/" element={<DashboardPengguna />} />
+    <Route path="/buatPengguna" element={<BuatPengguna />} />
+    <Route path="/lihatPengguna" element={<LihatPengguna/>}/>
+    <Route path="/buatPost" element={<BuatPost/>}/>
+  </Routes>
+  
 }
 
 export default App;
